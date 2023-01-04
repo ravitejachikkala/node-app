@@ -1,8 +1,5 @@
 FROM node:16
 
-RUN chmod +x docker-entrypoint.sh
-ENTRYPOINT ["/app/docker-entrypoint.sh"]
-
 # Create app directory
 WORKDIR /usr/src/app
 
@@ -17,6 +14,9 @@ RUN npm install
 
 # Bundle app source
 COPY . .
+
+RUN chmod +x deploy.sh
+ENTRYPOINT ["/app/deploy.sh"]
 
 EXPOSE 8080
 CMD [ "npm", "start" ]
