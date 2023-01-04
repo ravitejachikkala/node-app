@@ -15,9 +15,6 @@ RUN npm install
 # Bundle app source
 COPY . .
 
-RUN chmod +x deploy.sh
-ENTRYPOINT ["/app/deploy.sh"]
-
 EXPOSE 8080
 CMD [ "npm", "start" ]
 
