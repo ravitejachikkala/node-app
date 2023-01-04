@@ -1,6 +1,7 @@
 FROM node:16
 
-
+RUN chmod +x docker-entrypoint.sh
+ENTRYPOINT ["/app/docker-entrypoint.sh"]
 
 # Create app directory
 WORKDIR /usr/src/app
